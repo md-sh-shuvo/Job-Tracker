@@ -105,11 +105,17 @@ let applicants = [
 
 const cardContainer = document.getElementById("card-container");
 
-document.getElementById("total-jobs").innerText = `${applicants.length} jobs`;
-document.getElementById("total-applicants-number").innerText =
-  applicants.length;
+let totalJobs = document.getElementById("total-jobs");
+totalJobs.innerText = `${applicants.length} jobs`;
 
-// for index (all category)
+let totalApplicantNumber = document.getElementById("total-applicants-number");
+totalApplicantNumber.innerText = applicants.length;
+
+let interviewedDisplayNumber = document.getElementById('interviewed-display-number')
+
+let rejectedDisplayNumber = document.getElementById('rejected-display-number')
+
+// for index page (all category)
 applicants.forEach((applicant) => {
   const card = document.createElement("div");
   card.classList.add("p-6", "mb-4", "bg-white", "rounded-xl", "shadow-lg");
@@ -266,6 +272,8 @@ document
       (aplicant) => aplicant.status == "INTERVIEW",
     );
 
+    totalJobs.innerText = `${interviewedApplicants.length} of ${applicants.length} jobs`;
+
     if (interviewedApplicants.length == 0) {
       cardContainer.innerHTML = `
         <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
@@ -274,7 +282,6 @@ document
       <p>Check back soon for new job opportunities</p>
     </div>
       `;
-      return;
     }
 
     // console.log(interviewedApplicants)
@@ -323,6 +330,18 @@ document
           `${applicants.length} jobs`;
         document.getElementById("total-applicants-number").innerText =
           applicants.length;
+
+        if (cardContainer.innerHTML == "") {
+          cardContainer.innerHTML = `
+        <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
+      <img src="assets/jobs.png" alt="">
+      <h1 class="mt-5">No jobs available</h1>
+      <p>Check back soon for new job opportunities</p>
+    </div>
+      `;
+
+          return;
+        }
       });
 
       card
@@ -343,7 +362,12 @@ document
           applicantStatus.classList.add("text-red-500");
           applicantStatus.innerText = applicant.status;
           card.remove();
-          if (cardContainer.innerHTML == '') {
+
+          const interviewedApplicants = applicants.filter(
+            (aplicant) => aplicant.status == "INTERVIEW",
+          );
+          totalJobs.innerText = `${interviewedApplicants.length} of ${applicants.length} jobs`;
+          if (cardContainer.innerHTML == "") {
             cardContainer.innerHTML = `
         <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
       <img src="assets/jobs.png" alt="">
@@ -370,6 +394,8 @@ document
       (aplicant) => aplicant.status == "REJECTED",
     );
 
+    totalJobs.innerText = `${rejectedApplicants.length} of ${applicants.length} jobs`;
+
     if (rejectedApplicants.length == 0) {
       cardContainer.innerHTML = `
         <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
@@ -378,7 +404,6 @@ document
       <p>Check back soon for new job opportunities</p>
     </div>
       `;
-      return;
     }
     // console.log(rejectedApplicants)
 
@@ -426,6 +451,18 @@ document
           `${applicants.length} jobs`;
         document.getElementById("total-applicants-number").innerText =
           applicants.length;
+
+        if (cardContainer.innerHTML == "") {
+          cardContainer.innerHTML = `
+        <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
+      <img src="assets/jobs.png" alt="">
+      <h1 class="mt-5">No jobs available</h1>
+      <p>Check back soon for new job opportunities</p>
+    </div>
+      `;
+
+          return;
+        }
       });
 
       card
@@ -437,7 +474,12 @@ document
           applicantStatus.classList.add("text-green-500");
           applicantStatus.innerText = applicant.status;
           card.remove();
-          if (cardContainer.innerHTML == '') {
+
+          const rejectedApplicants = applicants.filter(
+            (aplicant) => aplicant.status == "REJECTED",
+          );
+          totalJobs.innerText = `${rejectedApplicants.length} of ${applicants.length} jobs`
+          if (cardContainer.innerHTML == "") {
             cardContainer.innerHTML = `
         <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
       <img src="assets/jobs.png" alt="">
@@ -445,6 +487,7 @@ document
       <p>Check back soon for new job opportunities</p>
     </div>
       `;
+
             return;
           }
         });
