@@ -174,12 +174,21 @@ applicants.forEach((applicant) => {
   cardContainer.appendChild(card);
 });
 
-
-
 // for all category-->
 
 document.getElementById("catagory-all").addEventListener("click", function () {
   cardContainer.innerHTML = "";
+
+  if (applicants.length == 0) {
+    cardContainer.innerHTML = `
+        <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
+      <img src="assets/jobs.png" alt="">
+      <h1 class="mt-5">No jobs available</h1>
+      <p>Check back soon for new job opportunities</p>
+    </div>
+      `;
+    return;
+  }
 
   applicants.forEach((applicant) => {
     const card = document.createElement("div");
@@ -200,7 +209,7 @@ document.getElementById("catagory-all").addEventListener("click", function () {
       <p class="salary">&nbsp;&nbsp; •&nbsp;&nbsp; ${applicant.salary}</p>
     </div>
     <div class="py-5">
-      <p class="applicant-status ${applicant.status == "INTERVIEW" ? "text-green-500" : "text-red-500" } ${applicant.status ? "inline-block" : "hidden" } py-2 px-3 mb-2 bg-[#EEF4FF] w-fit">
+      <p class="applicant-status ${applicant.status == "INTERVIEW" ? "text-green-500" : "text-red-500"} ${applicant.status ? "inline-block" : "hidden"} py-2 px-3 mb-2 bg-[#EEF4FF] w-fit">
         ${applicant.status}
       </p>
       <p class="text-[#323B49] text-sm">
@@ -246,10 +255,6 @@ document.getElementById("catagory-all").addEventListener("click", function () {
   });
 });
 
-
-
-
-
 // for interviewed category-->
 
 document
@@ -260,6 +265,17 @@ document
     const interviewedApplicants = applicants.filter(
       (aplicant) => aplicant.status == "INTERVIEW",
     );
+
+    if (interviewedApplicants.length == 0) {
+      cardContainer.innerHTML = `
+        <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
+      <img src="assets/jobs.png" alt="">
+      <h1 class="mt-5">No jobs available</h1>
+      <p>Check back soon for new job opportunities</p>
+    </div>
+      `;
+      return;
+    }
 
     // console.log(interviewedApplicants)
 
@@ -282,7 +298,7 @@ document
       <p class="salary">&nbsp;&nbsp; •&nbsp;&nbsp; ${applicant.salary}</p>
     </div>
     <div class="py-5">
-      <p class="applicant-status ${applicant.status == "INTERVIEW" ? "text-green-500" : "text-red-500" } ${applicant.status ? "inline-block" : "hidden"} py-2 px-3 mb-2 bg-[#EEF4FF] w-fit">
+      <p class="applicant-status ${applicant.status == "INTERVIEW" ? "text-green-500" : "text-red-500"} ${applicant.status ? "inline-block" : "hidden"} py-2 px-3 mb-2 bg-[#EEF4FF] w-fit">
         ${applicant.status}
       </p>
       <p class="text-[#323B49] text-sm">
@@ -326,13 +342,22 @@ document
           applicantStatus.classList.remove("hidden", "text-green-500");
           applicantStatus.classList.add("text-red-500");
           applicantStatus.innerText = applicant.status;
-          card.remove()
+          card.remove();
+          if (cardContainer.innerHTML == '') {
+            cardContainer.innerHTML = `
+        <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
+      <img src="assets/jobs.png" alt="">
+      <h1 class="mt-5">No jobs available</h1>
+      <p>Check back soon for new job opportunities</p>
+    </div>
+      `;
+            return;
+          }
         });
 
       cardContainer.appendChild(card);
     });
   });
-
 
 // for rejected category-->
 
@@ -345,6 +370,16 @@ document
       (aplicant) => aplicant.status == "REJECTED",
     );
 
+    if (rejectedApplicants.length == 0) {
+      cardContainer.innerHTML = `
+        <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
+      <img src="assets/jobs.png" alt="">
+      <h1 class="mt-5">No jobs available</h1>
+      <p>Check back soon for new job opportunities</p>
+    </div>
+      `;
+      return;
+    }
     // console.log(rejectedApplicants)
 
     rejectedApplicants.forEach((applicant) => {
@@ -366,7 +401,7 @@ document
       <p class="salary">&nbsp;&nbsp; •&nbsp;&nbsp; ${applicant.salary}</p>
     </div>
     <div class="py-5">
-      <p class="applicant-status ${applicant.status == "INTERVIEW" ? "text-green-500" : "text-red-500" } ${applicant.status ? "inline-block" : "hidden"} py-2 px-3 mb-2 bg-[#EEF4FF] w-fit">
+      <p class="applicant-status ${applicant.status == "INTERVIEW" ? "text-green-500" : "text-red-500"} ${applicant.status ? "inline-block" : "hidden"} py-2 px-3 mb-2 bg-[#EEF4FF] w-fit">
         ${applicant.status}
       </p>
       <p class="text-[#323B49] text-sm">
@@ -401,7 +436,17 @@ document
           applicantStatus.classList.remove("hidden", "text-red-500");
           applicantStatus.classList.add("text-green-500");
           applicantStatus.innerText = applicant.status;
-          card.remove()
+          card.remove();
+          if (cardContainer.innerHTML == '') {
+            cardContainer.innerHTML = `
+        <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
+      <img src="assets/jobs.png" alt="">
+      <h1 class="mt-5">No jobs available</h1>
+      <p>Check back soon for new job opportunities</p>
+    </div>
+      `;
+            return;
+          }
         });
       card
         .querySelector(".rejected-btn")
