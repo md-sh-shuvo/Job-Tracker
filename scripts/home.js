@@ -6,7 +6,7 @@ let applicants = [
     role: "React Native Developer",
     type: "Remote · Full-time",
     salary: "$130,000 - $175,000",
-    status: "NOT APPLIED",
+    status: "",
     description:
       "Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.",
     actions: ["INTERVIEW", "REJECTED"],
@@ -16,7 +16,7 @@ let applicants = [
     role: "Frontend Engineer",
     type: "On-site · Full-time",
     salary: "$110,000 - $150,000",
-    status: "APPLIED",
+    status: "",
     description:
       "Develop and maintain modern web applications with React and TypeScript.",
     actions: ["INTERVIEW", "REJECTED"],
@@ -26,7 +26,7 @@ let applicants = [
     role: "Backend Developer",
     type: "Remote · Part-time",
     salary: "$90,000 - $130,000",
-    status: "INTERVIEW",
+    status: "",
     description:
       "Design and implement scalable server-side logic using Node.js and Python.",
     actions: ["INTERVIEW", "REJECTED"],
@@ -36,7 +36,7 @@ let applicants = [
     role: "Data Scientist",
     type: "Hybrid · Full-time",
     salary: "$120,000 - $160,000",
-    status: "REJECTED",
+    status: "",
     description:
       "Analyze large datasets and create predictive models to support business decisions.",
     actions: ["INTERVIEW", "REJECTED"],
@@ -46,7 +46,7 @@ let applicants = [
     role: "Machine Learning Engineer",
     type: "Remote · Full-time",
     salary: "$140,000 - $180,000",
-    status: "NOT APPLIED",
+    status: "",
     description:
       "Develop ML models for real-time applications and deploy them at scale.",
     actions: ["INTERVIEW", "REJECTED"],
@@ -56,7 +56,7 @@ let applicants = [
     role: "UI/UX Designer",
     type: "On-site · Contract",
     salary: "$70,000 - $100,000",
-    status: "APPLIED",
+    status: "",
     description:
       "Design visually appealing interfaces and enhance user experience for web and mobile apps.",
     actions: ["INTERVIEW", "REJECTED"],
@@ -66,7 +66,7 @@ let applicants = [
     role: "Robotics Engineer",
     type: "Hybrid · Full-time",
     salary: "$125,000 - $170,000",
-    status: "NOT APPLIED",
+    status: "",
     description:
       "Develop autonomous robotic systems and optimize mechanical and software performance.",
     actions: ["INTERVIEW", "REJECTED"],
@@ -76,7 +76,7 @@ let applicants = [
     role: "Security Engineer",
     type: "Remote · Full-time",
     salary: "$130,000 - $160,000",
-    status: "INTERVIEW",
+    status: "",
     description:
       "Implement security protocols and monitor infrastructure for potential vulnerabilities.",
     actions: ["INTERVIEW", "REJECTED"],
@@ -86,7 +86,7 @@ let applicants = [
     role: "DevOps Engineer",
     type: "Remote · Full-time",
     salary: "$115,000 - $150,000",
-    status: "REJECTED",
+    status: "",
     description:
       "Maintain CI/CD pipelines and manage cloud infrastructure for sustainable tech products.",
     actions: ["INTERVIEW", "REJECTED"],
@@ -96,7 +96,7 @@ let applicants = [
     role: "IoT Developer",
     type: "Hybrid · Full-time",
     salary: "$110,000 - $145,000",
-    status: "NOT APPLIED",
+    status: "",
     description:
       "Develop Internet of Things devices and integrate them with cloud services for smart home automation.",
     actions: ["INTERVIEW", "REJECTED"],
@@ -127,7 +127,7 @@ applicants.forEach((applicant) => {
       <p class="salary">&nbsp;&nbsp; •&nbsp;&nbsp; ${applicant.salary}</p>
     </div>
     <div class="py-5">
-      <p class="${applicant.status == "NOT APPLIED" ? "text-red-500" : applicant.status == "APPLIED" ? "text-green-600" : "text-[#002C5C]"}  py-2 px-3 mb-2 bg-[#EEF4FF] w-fit">
+      <p class="${applicant.status == "INTERVIEW" ? "text-green-600" : "text-red-500"} ${applicant.status ? "inline-block" : "hidden"}  py-2 px-3 mb-2 bg-[#EEF4FF] w-fit">
         ${applicant.status}
       </p>
       <p class="text-[#323B49] text-sm">
@@ -143,11 +143,11 @@ applicants.forEach((applicant) => {
       </button>
     </div>
   `;
+
+
   cardContainer.appendChild(card);
 
-  // <div class="card p-6 bg-white rounded-xl shadow-lg">
-
-  // </div>;
+  
 
   card.querySelector(".dlt-btn").addEventListener("click", function (e) {
     card.remove();
