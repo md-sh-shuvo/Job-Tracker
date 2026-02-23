@@ -219,7 +219,7 @@ document.getElementById("catagory-all").addEventListener("click", function () {
         <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
       <img src="assets/jobs.png" alt="">
       <h1 class="mt-5">No jobs available</h1>
-      <p>Check back soon for new job opportunities</p>
+      <p class="text-center">Check back soon for new job opportunities</p>
     </div>
       `;
     return;
@@ -336,7 +336,7 @@ document
         <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
       <img src="assets/jobs.png" alt="">
       <h1 class="mt-5">No jobs available</h1>
-      <p>Check back soon for new job opportunities</p>
+      <p class="text-center">Check back soon for new job opportunities</p>
     </div>
       `;
     }
@@ -402,7 +402,7 @@ document
         <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
       <img src="assets/jobs.png" alt="">
       <h1 class="mt-5">No jobs available</h1>
-      <p>Check back soon for new job opportunities</p>
+      <p class="text-center">check back soon for new job opportunities</p>
     </div>
       `;
 
@@ -445,7 +445,7 @@ document
         <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
       <img src="assets/jobs.png" alt="">
       <h1 class="mt-5">No jobs available</h1>
-      <p>Check back soon for new job opportunities</p>
+      <p class="text-center">check back soon for new job opportunities</p>
     </div>
       `;
             return;
@@ -475,7 +475,7 @@ document
         <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
       <img src="assets/jobs.png" alt="">
       <h1 class="mt-5">No jobs available</h1>
-      <p>Check back soon for new job opportunities</p>
+      <p class="text-center">check back soon for new job opportunities</p>
     </div>
       `;
     }
@@ -540,7 +540,7 @@ document
         <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
       <img src="assets/jobs.png" alt="">
       <h1 class="mt-5">No jobs available</h1>
-      <p>Check back soon for new job opportunities</p>
+      <p class="text-center">check back soon for new job opportunities</p>
     </div>
       `;
 
@@ -573,7 +573,7 @@ document
         <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
       <img src="assets/jobs.png" alt="">
       <h1 class="mt-5">No jobs available</h1>
-      <p>Check back soon for new job opportunities</p>
+      <p class="text-center">check back soon for new job opportunities</p>
     </div>
       `;
 
