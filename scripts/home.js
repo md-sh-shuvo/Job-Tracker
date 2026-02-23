@@ -163,14 +163,14 @@ applicants.forEach((applicant) => {
     document.getElementById("total-applicants-number").innerText =
       applicants.length;
 
-      const interviewedApplicants = applicants.filter(
-        (aplicant) => aplicant.status == "INTERVIEW",
-      );
-      interviewedDisplayNumber.innerText = `${interviewedApplicants.length}`;
-      const rejectedApplicants = applicants.filter(
-        (aplicant) => aplicant.status == "REJECTED",
-      );
-      rejectedDisplayNumber.innerText = `${rejectedApplicants.length}`;
+    const interviewedApplicants = applicants.filter(
+      (aplicant) => aplicant.status == "INTERVIEW",
+    );
+    interviewedDisplayNumber.innerText = `${interviewedApplicants.length}`;
+    const rejectedApplicants = applicants.filter(
+      (aplicant) => aplicant.status == "REJECTED",
+    );
+    rejectedDisplayNumber.innerText = `${rejectedApplicants.length}`;
   });
 
   card.querySelector(".interview-btn").addEventListener("click", function () {
@@ -181,13 +181,13 @@ applicants.forEach((applicant) => {
     applicantStatus.innerText = applicant.status;
 
     const interviewedApplicants = applicants.filter(
-        (aplicant) => aplicant.status == "INTERVIEW",
-      );
-      interviewedDisplayNumber.innerText = `${interviewedApplicants.length}`;
-      const rejectedApplicants = applicants.filter(
-        (aplicant) => aplicant.status == "REJECTED",
-      );
-      rejectedDisplayNumber.innerText = `${rejectedApplicants.length}`;
+      (aplicant) => aplicant.status == "INTERVIEW",
+    );
+    interviewedDisplayNumber.innerText = `${interviewedApplicants.length}`;
+    const rejectedApplicants = applicants.filter(
+      (aplicant) => aplicant.status == "REJECTED",
+    );
+    rejectedDisplayNumber.innerText = `${rejectedApplicants.length}`;
   });
   card.querySelector(".rejected-btn").addEventListener("click", function () {
     applicant.status = "REJECTED";
@@ -197,13 +197,13 @@ applicants.forEach((applicant) => {
     applicantStatus.innerText = applicant.status;
 
     const interviewedApplicants = applicants.filter(
-        (aplicant) => aplicant.status == "INTERVIEW",
-      );
-      interviewedDisplayNumber.innerText = `${interviewedApplicants.length}`;
-      const rejectedApplicants = applicants.filter(
-        (aplicant) => aplicant.status == "REJECTED",
-      );
-      rejectedDisplayNumber.innerText = `${rejectedApplicants.length}`;
+      (aplicant) => aplicant.status == "INTERVIEW",
+    );
+    interviewedDisplayNumber.innerText = `${interviewedApplicants.length}`;
+    const rejectedApplicants = applicants.filter(
+      (aplicant) => aplicant.status == "REJECTED",
+    );
+    rejectedDisplayNumber.innerText = `${rejectedApplicants.length}`;
   });
 
   cardContainer.appendChild(card);
@@ -287,7 +287,6 @@ document.getElementById("catagory-all").addEventListener("click", function () {
       applicantStatus.classList.add("text-green-500");
       applicantStatus.innerText = applicant.status;
 
-      
       const interviewedApplicants = applicants.filter(
         (aplicant) => aplicant.status == "INTERVIEW",
       );
@@ -303,7 +302,6 @@ document.getElementById("catagory-all").addEventListener("click", function () {
       applicantStatus.classList.remove("hidden", "text-green-500");
       applicantStatus.classList.add("text-red-500");
       applicantStatus.innerText = applicant.status;
-
 
       const rejectedApplicants = applicants.filter(
         (aplicant) => aplicant.status == "REJECTED",
@@ -390,6 +388,15 @@ document
         document.getElementById("total-applicants-number").innerText =
           applicants.length;
 
+        const rejectedApplicants = applicants.filter(
+          (aplicant) => aplicant.status == "REJECTED",
+        );
+        rejectedDisplayNumber.innerText = `${rejectedApplicants.length}`;
+        const interviewedApplicants = applicants.filter(
+          (aplicant) => aplicant.status == "INTERVIEW",
+        );
+        interviewedDisplayNumber.innerText = `${interviewedApplicants.length}`;
+
         if (cardContainer.innerHTML == "") {
           cardContainer.innerHTML = `
         <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
@@ -427,6 +434,12 @@ document
           );
           totalJobs.innerText = `${interviewedApplicants.length} of ${applicants.length} jobs`;
           interviewedDisplayNumber.innerText = `${interviewedApplicants.length}`;
+
+          const rejectedApplicants = applicants.filter(
+            (aplicant) => aplicant.status == "REJECTED",
+          );
+          rejectedDisplayNumber.innerText = `${rejectedApplicants.length}`;
+
           if (cardContainer.innerHTML == "") {
             cardContainer.innerHTML = `
         <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
@@ -513,6 +526,15 @@ document
         document.getElementById("total-applicants-number").innerText =
           applicants.length;
 
+        const rejectedApplicants = applicants.filter(
+          (aplicant) => aplicant.status == "REJECTED",
+        );
+        rejectedDisplayNumber.innerText = `${rejectedApplicants.length}`;
+        const interviewedApplicants = applicants.filter(
+          (aplicant) => aplicant.status == "INTERVIEW",
+        );
+        interviewedDisplayNumber.innerText = `${interviewedApplicants.length}`;
+
         if (cardContainer.innerHTML == "") {
           cardContainer.innerHTML = `
         <div class="flex flex-col justify-center items-center py-20 bg-white rounded-lg">
@@ -535,6 +557,11 @@ document
           applicantStatus.classList.add("text-green-500");
           applicantStatus.innerText = applicant.status;
           card.remove();
+
+          const interviewedApplicants = applicants.filter(
+            (aplicant) => aplicant.status == "INTERVIEW",
+          );
+          interviewedDisplayNumber.innerText = `${interviewedApplicants.length}`;
 
           const rejectedApplicants = applicants.filter(
             (aplicant) => aplicant.status == "REJECTED",
