@@ -4,6 +4,7 @@ let applicants = [
   {
     company: "Mobile First Corp",
     role: "React Native Developer",
+    location: "New York, USA",
     type: "Remote · Full-time",
     salary: "$130,000 - $175,000",
     status: "",
@@ -14,6 +15,7 @@ let applicants = [
   {
     company: "NextGen Tech",
     role: "Frontend Engineer",
+    location: "San Francisco, USA",
     type: "On-site · Full-time",
     salary: "$110,000 - $150,000",
     status: "",
@@ -24,6 +26,7 @@ let applicants = [
   {
     company: "CloudWave Solutions",
     role: "Backend Developer",
+    location: "Austin, USA",
     type: "Remote · Part-time",
     salary: "$90,000 - $130,000",
     status: "",
@@ -34,6 +37,7 @@ let applicants = [
   {
     company: "DataZen Analytics",
     role: "Data Scientist",
+    location: "Chicago, USA",
     type: "Hybrid · Full-time",
     salary: "$120,000 - $160,000",
     status: "",
@@ -44,6 +48,7 @@ let applicants = [
   {
     company: "Quantum Leap AI",
     role: "Machine Learning Engineer",
+    location: "Seattle, USA",
     type: "Remote · Full-time",
     salary: "$140,000 - $180,000",
     status: "",
@@ -54,6 +59,7 @@ let applicants = [
   {
     company: "PixelPerfect Studio",
     role: "UI/UX Designer",
+    location: "Los Angeles, USA",
     type: "On-site · Contract",
     salary: "$70,000 - $100,000",
     status: "",
@@ -64,6 +70,7 @@ let applicants = [
   {
     company: "NextWave Robotics",
     role: "Robotics Engineer",
+    location: "Boston, USA",
     type: "Hybrid · Full-time",
     salary: "$125,000 - $170,000",
     status: "",
@@ -74,6 +81,7 @@ let applicants = [
   {
     company: "CyberShield Inc.",
     role: "Security Engineer",
+    location: "Washington, USA",
     type: "Remote · Full-time",
     salary: "$130,000 - $160,000",
     status: "",
@@ -84,6 +92,7 @@ let applicants = [
   {
     company: "GreenTech Solutions",
     role: "DevOps Engineer",
+    location: "Denver, USA",
     type: "Remote · Full-time",
     salary: "$115,000 - $150,000",
     status: "",
@@ -94,6 +103,7 @@ let applicants = [
   {
     company: "SmartHome Labs",
     role: "IoT Developer",
+    location: "San Diego, USA",
     type: "Hybrid · Full-time",
     salary: "$110,000 - $145,000",
     status: "",
@@ -133,6 +143,7 @@ applicants.forEach((applicant) => {
   <p class="text-[#64748B] mb-5">${applicant.role}</p>
   
     <div class="flex text-[#64748B] text-sm">
+      <p class="location">${applicant.location}&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; </p>
       <p class="type">${applicant.type}</p>
       <p class="salary">&nbsp;&nbsp; •&nbsp;&nbsp; ${applicant.salary}</p>
     </div>
@@ -240,6 +251,7 @@ document.getElementById("catagory-all").addEventListener("click", function () {
   <p class="text-[#64748B] mb-5">${applicant.role}</p>
   
     <div class="flex text-[#64748B] text-sm">
+      <p class="location">${applicant.location}&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; </p>
       <p class="type">${applicant.type}</p>
       <p class="salary">&nbsp;&nbsp; •&nbsp;&nbsp; ${applicant.salary}</p>
     </div>
@@ -358,6 +370,7 @@ document
   <p class="text-[#64748B] mb-5">${applicant.role}</p>
   
     <div class="flex text-[#64748B] text-sm">
+      <p class="location">${applicant.location}&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; </p>
       <p class="type">${applicant.type}</p>
       <p class="salary">&nbsp;&nbsp; •&nbsp;&nbsp; ${applicant.salary}</p>
     </div>
@@ -496,6 +509,7 @@ document
   <p class="text-[#64748B] mb-5">${applicant.role}</p>
   
     <div class="flex text-[#64748B] text-sm">
+      <p class="location">${applicant.location}&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; </p>
       <p class="type">${applicant.type}</p>
       <p class="salary">&nbsp;&nbsp; •&nbsp;&nbsp; ${applicant.salary}</p>
     </div>
